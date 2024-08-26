@@ -7,7 +7,7 @@ import subprocess
 import os
 
 # Use a global threadpool (so each candidate can spawn multiple processes)
-num_threads=32 // Change to number of threads available/willing to use on own machine
+num_threads=32 # Change to number of threads available/willing to use on own machine
 import concurrent.futures 
 threadpool = concurrent.futures.ThreadPoolExecutor(num_threads)
 #https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ThreadPoolExecutor
@@ -15,7 +15,7 @@ threadpool = concurrent.futures.ThreadPoolExecutor(num_threads)
 #https://www.digitalocean.com/community/tutorials/how-to-use-threadpoolexecutor-in-python-3
 #https://docs.python.org/3/library/subprocess.html
 
-benchmark_directory = '/[path]/[to]/[benchmark]/[directory]/champsim-nn-traces-txt'
+benchmark_directory = '/[path]/[to]/[benchmarks]/[directory]/champsim-nn-traces-txt'
 
 # Define the design space
 learning_rate = [0.0001, 0.001]
@@ -53,7 +53,7 @@ def fitness_worker(ga_instance, solution_i, solution_idx):
     for benchmark_name in benchmark_names:
         hyper_p_combo = f'timelimit -t 5 -- ./nn-off {benchmark_directory}/{benchmark_name} 0 {benchmark_directory}/{benchmark_name} {inp} 1 {lyr} {hs} {mse} {lr} {time} {act} {bs}' 
         hashed = hash(hyper_p_combo)
-        parameters = f"/home/angus/champsim-nn-train-and-test-split/neural_net/params_dir/{hashed}PARAMS.pt"
+        parameters = f"/[path]/[to]/[working]/[directory]/params_dir/{hashed}PARAMS.pt"
         command = f'{hyper_p_combo} {parameters}'
         cmds.append(command)
         
