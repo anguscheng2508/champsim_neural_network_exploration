@@ -1,1 +1,2 @@
 Place compiled binaries from ChampSim that will be used with the ThreadedBaselines script inside this directory.
+*NOTE* Ensure that the latest binaries are inside here. After each compilation, binaries must be copied from ChampSim directory into here.
