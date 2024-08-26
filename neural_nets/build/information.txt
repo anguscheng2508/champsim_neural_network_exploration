@@ -1,0 +1,1 @@
+This build directory will be empty before first compilation. After making/compiling the source codes, the binaries/executables will be stored here. Current working directory must be here before compiling code. 
