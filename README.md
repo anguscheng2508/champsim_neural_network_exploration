@@ -42,3 +42,75 @@ cd neural_net/build
 cmake --build . --config Release
 ```
 
+### Command Line - Executing and Genetic Algorithm
+Each (recurrent) neural network source code take in arguments. Make sure the arguments provided are in the correct positions.
+**nn-offline.cpp:**
+```
+./nn-off <arg1: training trace file path> 
+<arg2: nn -or 0> 
+<arg3: inference trace file path> 
+<arg4: #inputs> 
+<arg5: #outputs> 
+<arg6: #layers> 
+<arg7: neurons per layer> 
+<arg8: MSE limit> 
+<arg9: learning rate> 
+<arg10: time limit> 
+<arg11: activation function> 
+<arg12: batch size>
+<arg13: parameters saved path>
+
+Example usage: 
+./nn-off /Users/anguscheng/ChampSim/Threadedbaselines/results/champsim_nn,410.bwaves-1963B.txt 0 /Users/anguscheng/ChampSim/Threadedbaselines/results/champsim_nn,603.bwaves_s-891B.txt 3 3 9 50 0.001 0.0001 600 relu 10 /Users/anguscheng/neural_nets/params_dir/
+```
+
+**nn-online.cpp**
+```
+./nn-on <arg1: training trace file path>
+<arg2: nn -or 0> 
+<arg3: #inputs> 
+<arg4: #outputs> 
+<arg5: #layers> 
+<arg6: neurons per layer>
+<arg7: learning rate> 
+<arg8: time limit> 
+<arg9: activation function> 
+<arg10: batch size>
+
+Example usage:
+./nn-on /Users/anguscheng/ChampSim/Threadedbaselines/results/champsim_nn,410.bwaves-1963B.txt 0 5 2 5 35 0.0001 1200 selu 15
+```
+
+**rnn-offline.cpp**
+```
+./rnn-off <arg1: training trace file path> 
+<arg2: nn -or 0> 
+<arg3: inference trace file path> 
+<arg4: #inputs> 
+<arg5: #outputs> 
+<arg6: #layers> 
+<arg7: neurons per layer> 
+<arg8: MSE limit> 
+<arg9: learning rate> 
+<arg10: time limit> 
+<arg11: batch size>
+
+Example usage:
+./rnn-off /Users/anguscheng/ChampSim/Threadedbaselines/results/champsim_nn,410.bwaves-1963B.txt 0 /Users/anguscheng/ChampSim/Threadedbaselines/results/champsim_nn,603.bwaves_s-891B.txt 7 3 4 15 0.001 0.001 180 20
+```
+
+**rnn-online.cpp**
+```
+./rnn-on <arg1: training trace file path> 
+<arg2: nn -or 0> 
+<arg3: #inputs> 
+<arg4: #outputs> 
+<arg5: #layers> 
+<arg6: neurons per layer> 
+<arg7: learning rate> 
+<arg8: time limit> 
+<arg9: batch size>
+
+Example usage:
+./rnn-on /Users/anguscheng/ChampSim/Threadedbaselines/results/champsim_nn,410.bwaves-1963B.txt 0 8 5 7 40 0.01 360 20
+```
