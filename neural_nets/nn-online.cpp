@@ -1,7 +1,4 @@
 //
-//  example-app.cpp
-//
-//
 //  Created by Angus Cheng on 08/02/2024.
 //
 
