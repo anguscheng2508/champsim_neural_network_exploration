@@ -19,7 +19,7 @@ resultsBuffer = []
 DesignSpace = []
 
 #trace_dir = "/home/opt/Benchmarks/speccpu/"
-trace_dir = "/[path]/[to]/[top 30 sensitive tracers]/"
+trace_dir = "/[path]/[to]/[top 30 sensitive traces]/"
 #bins="champsim champsim_ampmlite champsim_ipstride champsim_nextline champsim_spp".split()
 #bins="champsim champsim_nextline champsim_d10 champsim_d10mf champsim_ip_stride".split() # champsim_hp champsim_gshare".split()
 bins="champsim_nn".split()
