@@ -1,5 +1,12 @@
 # Champsim Neural Network Exploration
 ## Introduction
+This repository has been set up as the fruits of our labour, exlporing the feasability of neural networks in prefetching algorithms with the use of ChampSim and LibTorch. What started as an undergraduate project and progressed through a summer research internship (and may be proceeding into an MAI project), my supervisor; Dr. Philippos Papaphilippou, and I; Angus Cheng, have been working on exploring integrating neural networks into prefetching algorithms. Neural networks are known for their versatility and adaptibility, which can sound enticing for prefetch algorithms, where predictive patterns is the name of the game. However, given their notoriety for expensive computing, this project was created to explore how feasible it was for neural networks to be integrated.
+
+This project focuses largely on the design space exploration of neural networks, in simulated 'offline' environments as well as 'online'. **'Offline** refers to an environment where the dataset is already prepared, a neural network is trained and then accuracies are measured by testing on this same dataset. **'Online'** is when the dataset is prepared, but fed into the neural network as a stream for training, and accuracies are measured during this training - imitating an 'on-board' implementation. Recurrent neural networks are also explored.
+
+An online and offline optimal accuracy measurement calculation, per trace, has been developed. These will be used as a sort of comparison for the neural network performances.
+
+A genetic algorthm is used to find an adequate neural network architecture with a decent average accuracy, to then be implemented into ChampSim - which will then finally test the IPC and compare with state-of-the-art benchmarks.
 
 
 ## Getting started - Prerequisites
@@ -114,3 +121,27 @@ Example usage:
 Example usage:
 ./rnn-on /Users/anguscheng/ChampSim/Threadedbaselines/results/champsim_nn,410.bwaves-1963B.txt 0 8 5 7 40 0.01 360 20
 ```
+
+### Licensing
+All new code is licensed under the following license:
+
+[GNU General Public License, version
+2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+
+```
+  Copyright 2024 Angus Cheng, Philippos Papaphilippou @ TCD, Ireland
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU General Public License
+  as published by the Free Software Foundation; either version 2
+  of the License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; If not, see <http://www.gnu.org/licenses/>.
+```
+
