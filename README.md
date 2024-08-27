@@ -1,1 +1,1 @@
-# champsim_neural_network_exploration
+# Champsim Neural Network Exploration
