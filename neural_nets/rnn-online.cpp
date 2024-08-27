@@ -1,7 +1,4 @@
 //
-//  example-app.cpp
-//
-//
 //  Created by Angus Cheng on 08/02/2024.
 //
 
@@ -27,10 +24,9 @@ int main(int argc, char *argv[]) {
 //********** This section will read in deltas from a text file and store in variable ********
     std::vector<std::string> file_paths = {argv[1]};
     int nn = atoi(argv[2]);
-    int inf = atoi(argv[3]);
-    int num_inputs = atoi(argv[4]);
-    int num_outputs = atoi(argv[5]);
-    int layers = atoi(argv[6]);
+    int num_inputs = atoi(argv[3]);
+    int num_outputs = atoi(argv[4]);
+    int layers = atoi(argv[5]);
     char str_delta[60];
     long int_delta;
     char *stopstring;
@@ -79,10 +75,10 @@ int main(int argc, char *argv[]) {
     // Hyper parameters
     const int64_t input_size = num_inputs;
     const int64_t num_classes = num_outputs;
-    const int64_t batch_size = atoi(argv[10]);
-    const int64_t hidden_size = atoi(argv[7]);
-    const double learning_rate = atof(argv[8]);
-    int time_limit = atoi(argv[9]);
+    const int64_t batch_size = atoi(argv[9]);
+    const int64_t hidden_size = atoi(argv[6]);
+    const double learning_rate = atof(argv[7]);
+    int time_limit = atoi(argv[8]);
     int divisor = 10;
     int64_t num_correct = 0;
     torch::Tensor loss;
@@ -203,7 +199,7 @@ int main(int argc, char *argv[]) {
 //    }
     
     // Line to be printed then parsed:
-    std::cout << "Trace: " << trace << " Num_inputs: " << argv[4] << " Num_layers: " << argv[6] << " Hidden_size: " << argv[7] << " Learning_rate: " << argv[8] << " Time_limit: " << argv[9] << " Batch_size: " << argv[10] << " Acc: " << accuracy << std::endl;
+    std::cout << "Trace: " << trace << " Num_inputs: " << argv[3] << " Num_layers: " << argv[5] << " Hidden_size: " << argv[6] << " Learning_rate: " << argv[7] << " Time_limit: " << argv[8] << " Batch_size: " << argv[9] << " Acc: " << accuracy << std::endl;
     
     
 return 0;
