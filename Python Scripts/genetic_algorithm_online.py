@@ -48,9 +48,7 @@ def fitness_worker(ga_instance, solution_i, solution_idx):
     cmds = []
     for benchmark_name in benchmark_names:
         hyper_p_combo = f'./nn-on {benchmark_directory}/{benchmark_name} 0 {inp} 1 {lyr} {hs} {lr} {time} {act} {bs}' 
-        hashed = hash(hyper_p_combo)
-        parameters = f"/[path]/[to]/[working]/[directory]/params_dir/{hashed}PARAMS.pt"
-        command = f'{hyper_p_combo} {parameters}'
+        command = f'{hyper_p_combo}'
         cmds.append(command)
         
         benchmark_accuracies = {benchmark_name: []}
