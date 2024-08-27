@@ -1,0 +1,1 @@
+This directory contains all processed binaries from the threaded baselines script. These txts will be used as the datasets for the neural networks.
